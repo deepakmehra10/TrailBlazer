@@ -1,8 +1,7 @@
 package com.knoldus.trailblazer
 
-import com.lightbend.lagom.scaladsl.api.ServiceLocator
+import com.lightbend.lagom.scaladsl.api.{Descriptor, ServiceLocator}
 import com.lightbend.lagom.scaladsl.api.ServiceLocator.NoServiceLocator
-import com.lightbend.lagom.scaladsl.broker.kafka.LagomKafkaComponents
 import com.lightbend.lagom.scaladsl.devmode.LagomDevModeComponents
 import com.lightbend.lagom.scaladsl.server.{LagomApplication, LagomApplicationContext, LagomApplicationLoader}
 import com.softwaremill.macwire.wire
@@ -21,7 +20,7 @@ class TrailBlazerLoader extends LagomApplicationLoader {
   override def loadDevMode(context: LagomApplicationContext): LagomApplication =
     new TrailBlazerApplication(context) with LagomDevModeComponents
 
-  override def describeService = Some(readDescriptor[TrailBlazerService])
+  override def describeService: Option[Descriptor] = Some(readDescriptor[TrailBlazerService])
 
 }
 

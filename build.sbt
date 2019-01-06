@@ -32,3 +32,5 @@ lazy val `trailblazer-impl` = (project in file("trailblazer-impl"))
   )
   .settings(lagomForkedTestSettings: _*)
   .dependsOn(`trailblazer-api`)
+
+coverageEnabled := true
