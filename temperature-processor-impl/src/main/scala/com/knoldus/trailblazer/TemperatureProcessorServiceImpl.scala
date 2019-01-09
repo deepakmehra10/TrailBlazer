@@ -10,9 +10,9 @@ import scala.concurrent.Future
 /**
   * The TrailBlazerServiceImpl class
   */
-class TrailBlazerServiceImpl extends TrailBlazerService {
+class TemperatureProcessorServiceImpl extends TemperatureProcessorService {
 
-  private final val log: Logger = LoggerFactory.getLogger(classOf[TrailBlazerServiceImpl])
+  private final val log: Logger = LoggerFactory.getLogger(classOf[TemperatureProcessorServiceImpl])
 
   /**
     * Health of the service.

@@ -7,7 +7,7 @@ import com.lightbend.lagom.scaladsl.api.{Service, ServiceCall}
 /**
   * The TrailBlazerService trait.
   */
-trait TrailBlazerService extends Service {
+trait TemperatureProcessorService extends Service {
 
   def health(): ServiceCall[NotUsed, String]
 
@@ -18,8 +18,8 @@ trait TrailBlazerService extends Service {
     // @formatter:off
     named("trailblazer")
       .withCalls(
-        restCall(Method.GET, "/api/trailblazer/health", health _),
-        restCall(Method.GET, "/api/trailblazer/version", version _),
+        restCall(Method.GET, "/api/temperature-processor/health", health _),
+        restCall(Method.GET, "/api/temperature-processor/version", version _),
       )
       .withAutoAcl(true)
     // @formatter:on

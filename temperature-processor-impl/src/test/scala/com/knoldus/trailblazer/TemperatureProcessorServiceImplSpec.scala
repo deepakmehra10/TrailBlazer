@@ -4,14 +4,14 @@ import com.lightbend.lagom.scaladsl.server.LocalServiceLocator
 import com.lightbend.lagom.scaladsl.testkit.ServiceTest
 import org.scalatest.{AsyncWordSpec, BeforeAndAfterAll, Matchers}
 
-class TrailBlazerServiceImplSpec extends AsyncWordSpec with Matchers with BeforeAndAfterAll {
+class TemperatureProcessorServiceImplSpec extends AsyncWordSpec with Matchers with BeforeAndAfterAll {
 
   private val server = ServiceTest.startServer(ServiceTest.defaultSetup
     .withCassandra(true)) { ctx =>
     new TrailBlazerApplication(ctx) with LocalServiceLocator
   }
 
-  val client = server.serviceClient.implement[TrailBlazerService]
+  val client = server.serviceClient.implement[TemperatureProcessorService]
 
   override protected def afterAll() = server.stop()
 

@@ -20,7 +20,7 @@ class TrailBlazerLoader extends LagomApplicationLoader {
   override def loadDevMode(context: LagomApplicationContext): LagomApplication =
     new TrailBlazerApplication(context) with LagomDevModeComponents
 
-  override def describeService: Option[Descriptor] = Some(readDescriptor[TrailBlazerService])
+  override def describeService: Option[Descriptor] = Some(readDescriptor[TemperatureProcessorService])
 
 }
 
@@ -29,6 +29,6 @@ abstract class TrailBlazerApplication(context: LagomApplicationContext)
     with AhcWSComponents {
 
   // Bind the service that this server provides
-  override lazy val lagomServer = serverFor[TrailBlazerService](wire[TrailBlazerServiceImpl])
+  override lazy val lagomServer = serverFor[TemperatureProcessorService](wire[TemperatureProcessorServiceImpl])
 
 }
