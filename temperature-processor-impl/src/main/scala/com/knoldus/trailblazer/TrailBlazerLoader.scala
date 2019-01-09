@@ -8,7 +8,8 @@ import com.softwaremill.macwire.wire
 import play.api.libs.ws.ahc.AhcWSComponents
 
 /**
-  * The class TrailBlazerLoader
+  * The class TrailBlazerLoader uses LagomApplicationLoader to load the application and does the
+  * the binding of modules at runtime.
   */
 class TrailBlazerLoader extends LagomApplicationLoader {
 
