@@ -20,7 +20,7 @@ lazy val `trailblazer-api` = (project in file("trailblazer-api"))
   )
 
 lazy val `trailblazer-impl` = (project in file("trailblazer-impl"))
-  .enablePlugins(LagomScala)
+  .enablePlugins(LagomScala, SbtReactiveAppPlugin)
   .settings(
     libraryDependencies ++= Seq(
       lagomScaladslPersistenceCassandra,
