@@ -16,8 +16,6 @@ Code Review
 
 ✓ All files modified follow the expected convention for the language they are written in; whitespace, format, spelling, etc.
 
-✓ FindBugs reports zero warnings.
-
 ✓ Ensured that the test coverage is above 80%.
 
 
