@@ -5,12 +5,23 @@ import com.lightbend.lagom.scaladsl.api.transport.Method
 import com.lightbend.lagom.scaladsl.api.{Service, ServiceCall}
 
 /**
-  * The TrailBlazerService trait.
+  * TemperatureProcessorService is a trait extending {@link Service} defining service descriptor to serve the route calls
+  * for TemperatureProcessing API.
   */
 trait TemperatureProcessorService extends Service {
 
+  /**
+    * Gets the health of the service.
+    *
+    * @return ServiceCall to return the health of the service.
+    */
   def health(): ServiceCall[NotUsed, String]
 
+  /**
+    * Get the current version of the service.
+    *
+    * @return ServiceCall to return the version of the service.
+    */
   def version(): ServiceCall[NotUsed, String]
 
   override final def descriptor = {
@@ -24,5 +35,4 @@ trait TemperatureProcessorService extends Service {
       .withAutoAcl(true)
     // @formatter:on
   }
-
 }
