@@ -17,6 +17,3 @@ Code Review
 ✓ All files modified follow the expected convention for the language they are written in; whitespace, format, spelling, etc.
 
 ✓ Ensured that the test coverage is above 80%.
-
-
-
