@@ -14,7 +14,7 @@ logs
 
 # intellij idea
 .idea
-.iml
+*.iml
 *.class
 *.ipr
 *.iws
