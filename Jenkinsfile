@@ -5,27 +5,27 @@ pipeline {
         stage('Code Quality Check') {
             steps {
                 echo 'Code Quality Checking.'
-		sbt scalastyle
-		sbt coverage test coverageReport
+		//sbt scalastyle
+		//sbt coverage test coverageReport
             }
         }
         stage('Packaging Stage') {
             steps {
                 echo 'Packaging'
-		sbt universal:packageBin
+		//sbt universal:packageBin
             }
         }
         stage('DockerStage') {
             steps {
                 echo 'Deploying....'
-                sbt docker:publishLocal
+                //sbt docker:publishLocal
 		
             }
         }
        stage('Deploy Stage') {
             steps {
                 echo 'Deploying....'
-		minikube start
+		//minikube start
             }
         }
     }
