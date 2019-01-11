@@ -18,8 +18,7 @@ pipeline {
         stage('DockerStage') {
             steps {
                 echo 'Deploying....'
-eval $(minikube docker-env)
-sbt docker:publishLocal
+                sbt docker:publishLocal
 		
             }
         }
