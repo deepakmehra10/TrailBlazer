@@ -7,7 +7,7 @@ pipeline {
                 echo 'Code Quality Checking.'
 		sh "pwd"		
 		//sh "sbt"
-		sh "sbt scalastyle"
+		//sh "sbt scalastyle"
 		sh "sbt coverage test coverageReport"
             }
         }
