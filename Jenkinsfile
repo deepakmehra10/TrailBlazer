@@ -6,21 +6,22 @@ pipeline {
             steps {
                 echo 'Code Quality Checking.'
 		sh "pwd"		
-		sh "sbt"
-		//sbt scalastyle
-		//sbt coverage test coverageReport
+		//sh "sbt"
+		sh "sbt scalastyle"
+		sh "sbt coverage test coverageReport"
             }
         }
         stage('Packaging Stage') {
             steps {
                 echo 'Packaging'
-		//sbt universal:packageBin
+		sh "sbt universal:packageBin"
             }
         }
         stage('DockerStage') {
             steps {
                 echo 'Deploying....'
-                //sbt docker:publishLocal
+		sh "minikube start && eval $(minikube docker-env)"                
+		sh "sbt docker:publishLocal"
 		
             }
         }
