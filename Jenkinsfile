@@ -8,7 +8,7 @@ pipeline {
 		sh "pwd"		
 		//sh "sbt"
 		//sh "sbt scalastyle"
-		//sh "sbt coverage test coverageReport"
+		sh "sbt coverage test coverageReport"
             }
         }
         stage('Packaging Stage') {
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
 		sh "minikube start"
-		sh "eval \${minikube docker-env}" 
+		sh 'eval ${minikube docker-env}' 
 		sh "docker images"               
 		//sh "sbt docker:publishLocal"
 		
