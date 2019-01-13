@@ -5,7 +5,8 @@ pipeline {
         stage('Code Quality Check') {
             steps {
                 echo 'Code Quality Checking.'
-		sbt
+		sh "pwd"		
+		sh "sbt"
 		//sbt scalastyle
 		//sbt coverage test coverageReport
             }
