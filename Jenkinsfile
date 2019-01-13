@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Packaging Stage') {
             steps {
-               // echo 'Packaging'
+                echo 'Packaging'
 		//sh "sbt universal:packageBin"
             }
         }
