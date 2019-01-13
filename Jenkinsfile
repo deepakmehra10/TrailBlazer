@@ -8,22 +8,22 @@ pipeline {
 		sh "pwd"		
 		//sh "sbt"
 		//sh "sbt scalastyle"
-		sh "sbt coverage test coverageReport"
+		//sh "sbt coverage test coverageReport"
             }
         }
         stage('Packaging Stage') {
             steps {
-                echo 'Packaging'
-		sh "sbt universal:packageBin"
+               // echo 'Packaging'
+		//sh "sbt universal:packageBin"
             }
         }
         stage('DockerStage') {
             steps {
                 echo 'Deploying....'
 		sh "minikube start"
-		sh "eval \$(minikube docker-env)" 
+		sh "eval \${minikube docker-env}" 
 		sh "docker images"               
-		sh "sbt docker:publishLocal"
+		//sh "sbt docker:publishLocal"
 		
             }
         }
