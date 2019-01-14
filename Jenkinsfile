@@ -8,7 +8,7 @@ pipeline {
 		sh "pwd"		
 		//sh "sbt"
 		//sh "sbt scalastyle"
-		sh "sbt coverage test coverageReport"
+		//sh "sbt coverage test coverageReport"
             }
         }
         stage('Packaging Stage') {
