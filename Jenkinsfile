@@ -20,7 +20,7 @@ pipeline {
         stage('DockerStage') {
             steps {
                 echo 'Deploying....'
-		sh "minikube start"
+		//sh "minikube start"
 		sh 'chmod +x ./daemon.sh'
 		sh './daemon.sh'                
 		sh "docker images"               
