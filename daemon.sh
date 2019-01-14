@@ -1,2 +1,2 @@
 #!/bin/bash
-eval $(minikube docker-env)
+echo '''eval $(minikube docker-env)'''
