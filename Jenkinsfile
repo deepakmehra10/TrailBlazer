@@ -41,7 +41,11 @@ script {
        stage('Deploy Stage') {
             steps {
                 echo 'Deploying....'
-		//minikube start
+		sh "kubectl run from-jenkins --image=temperature-processor-impl:1.0.0-SNAPSHOT --port=9001"
+		sh "kubectl expose deployment from-jenkins --type=NodePort"
+		sh "kubectl get pod"
+		sh 'curl $(minikube service hello-minikube --url)'
+
             }
         }
     }
