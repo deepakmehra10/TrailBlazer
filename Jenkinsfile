@@ -1,6 +1,12 @@
 pipeline {
     agent any
+	environment {
+	DOCKER_TLS_VERIFY="1"
+DOCKER_HOST="tcp://192.168.99.115:2376"
+DOCKER_CERT_PATH="/home/knoldus/.minikube/certs"
+DOCKER_API_VERSION="1.35"
 
+}
     stages {
         stage('Code Quality Check') {
             steps {
