@@ -21,9 +21,8 @@ pipeline {
             steps {
                 echo 'Deploying....'
 		sh "minikube start"
-                def value ='$(minikube docker-env)'
-		sh 'eval $value'
-			//sh 'eval "\$(minikube docker-env)"' 
+		sh 'chmod +x ./daemon.sh'
+		sh './daemon.sh'                
 		sh "docker images"               
 		//sh "sbt docker:publishLocal"
 		
