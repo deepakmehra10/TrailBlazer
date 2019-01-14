@@ -21,8 +21,10 @@ pipeline {
             steps {
                 echo 'Deploying....'
 		//sh "minikube start"
+script {
 		def value = sh script: 'eval $(minikube docker-env)', returnStdout: true
 		println value
+}
 		sh 'chmod +x ./daemon.sh'
 		sh './daemon.sh'                
 		sh "docker images"               
