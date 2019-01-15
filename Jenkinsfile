@@ -48,7 +48,7 @@ pipeline {
                 echo 'Deploying....'
 		sh "kubectl delete service from-jenkins"		
 		sh "kubectl delete deployment from-jenkins"		
-		sh "kubectl run from-jenkins --image=temperature-processor-impl:1.0.0-SNAPSHOT --port=9001" --env="APPLICATION_SECRET=hehe"
+		sh 'kubectl run from-jenkins --image=temperature-processor-impl:1.0.0-SNAPSHOT --port=9001 --env="APPLICATION_SECRET=hehe"'
 		sh "kubectl expose deployment from-jenkins --type=NodePort"
 		sh "kubectl get pod"
 		sh "minikube logs"
