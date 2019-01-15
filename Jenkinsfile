@@ -20,7 +20,8 @@ pipeline {
         stage('Packaging Stage') {
             steps {
                 echo 'Packaging'
-		//sh "sbt universal:packageBin"
+		sh "sbt universal:packageBin"
+		sh "sbt docker:publishLocal"
             }
         }
         stage('DockerStage') {
