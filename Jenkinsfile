@@ -27,6 +27,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
 		sh "minikube start"
+		sh "minikube status"
 //script {
 //		def value = sh script: 'eval $(minikube docker-env)', returnStdout: true
 //		println value
