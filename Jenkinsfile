@@ -26,6 +26,7 @@ pipeline {
         stage('DockerStage') {
             steps {
                 echo 'Deploying....'
+		sh "minikube docker-env"
 		sh "minikube start"
 		sh "minikube status"
 //script {
