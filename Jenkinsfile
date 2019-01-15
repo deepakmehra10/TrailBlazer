@@ -27,7 +27,8 @@ pipeline {
             steps {
                 echo 'Deploying....'
 		sh "minikube docker-env"
-		sh "minikube start"
+		sh "minikube start --vm-driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost --memory 4000"		
+		//sh "minikube start"
 		sh "minikube status"
 //script {
 //		def value = sh script: 'eval $(minikube docker-env)', returnStdout: true
