@@ -22,7 +22,7 @@ pipeline {
                 echo 'Packaging'
 		sh "sbt universal:packageBin"
 		sh "sbt docker:publishLocal"
-		sh "docker run -it -p 80:9001 -e APPLICATION_SECRET=hehe 19a2674dc8be"
+		sh "docker run -i -p 80:9001 -e APPLICATION_SECRET=hehe 19a2674dc8be"
             }
         }
         stage('DockerStage') {
