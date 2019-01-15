@@ -50,6 +50,7 @@ pipeline {
 		sh "kubectl run from-jenkins --image=temperature-processor-impl:1.0.0-SNAPSHOT --port=9001"
 		sh "kubectl expose deployment from-jenkins --type=NodePort"
 		sh "kubectl get pod"
+		sh "minikube logs"
 		sh 'curl $(minikube service from-jenkins --url)'
 
             }
